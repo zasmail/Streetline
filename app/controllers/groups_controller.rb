@@ -2,11 +2,12 @@ class GroupsController < ApplicationController
   http_basic_authenticate_with name: "admin", password: "password", except: [:index, :show]
   
   def index
-    @groups = Group.all
+    @groups = Group.order("id").page(params[:page])
   end  
 
   def show
     @group = Group.find(params[:id])
+    @spaces = Space.where(group_id: @group.id)
   end
 
   def new

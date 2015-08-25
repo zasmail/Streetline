@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   get 'welcome/index'
   resources :groups do
-    resources :spaces
-    resources :locations
+    resources :spaces, :locations
   end
+
+  resources :spaces
+
   root 'welcome#index'
 end
