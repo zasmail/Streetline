@@ -13,11 +13,13 @@
   <%= @group.location %>
 </p>
 
-<h2>Spaces</h2>
-<%= render @group.spaces %>
+<h2>Spaces AHSDHFA</h2>
+<%= @spaces.each do |space| %>
+  <p>Stuff</p>
+<% end %>
 
 <h2>Spaces</h2>
-<%= render @group.spaces %>
+<%= render 'spaces/index', :group => @group.id %>
 
 <h2>Add a space:</h2>
 <%= render 'spaces/form' %>

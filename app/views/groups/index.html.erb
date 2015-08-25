@@ -1,6 +1,7 @@
 <h1>Listing groups</h1>
 <td><%= link_to 'New group', new_group_path %></td>
 
+<%= paginate  @groups %>
 <table>
   <tr>
     <th>Title</th>
@@ -10,7 +11,7 @@
  
   <% @groups.each do |group| %>
     <tr>
-      <td><%= group.title %></td>
+      <td><%= link_to group.title, group_path(group) %></td>
       <td><%= group.kind %></td>
       <td><%= link_to 'Show', group_path(group) %></td>
       <td><%= link_to 'Edit', edit_group_path(group) %></td>
