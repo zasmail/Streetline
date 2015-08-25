@@ -1,0 +1,9 @@
+<%= form_for([@group, @group.spaces.build]) do |f| %>
+  <p>
+    <%= f.label :policy %><br>
+    <%= f.text_field :policy %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

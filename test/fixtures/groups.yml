@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  unique_id: MyString
+  kind: MyString
+  title: MyString
+  isInstrumented: false
+
+two:
+  unique_id: MyString
+  kind: MyString
+  title: MyString
+  isInstrumented: false

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  policy: 1
+  metered: false
+  instrumented: false
+  creditcard: false
+  coin: false
+  group_id: 
+
+two:
+  policy: 1
+  metered: false
+  instrumented: false
+  creditcard: false
+  coin: false
+  group_id: 

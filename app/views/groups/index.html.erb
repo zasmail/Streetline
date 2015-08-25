@@ -1,0 +1,22 @@
+<h1>Listing groups</h1>
+<td><%= link_to 'New group', new_group_path %></td>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Kind</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @groups.each do |group| %>
+    <tr>
+      <td><%= group.title %></td>
+      <td><%= group.kind %></td>
+      <td><%= link_to 'Show', group_path(group) %></td>
+      <td><%= link_to 'Edit', edit_group_path(group) %></td>
+      <td><%= link_to 'Destroy', group_path(group),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

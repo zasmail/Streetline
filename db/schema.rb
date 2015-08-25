@@ -11,6 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150825005520) do
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "unique_id"
+    t.string   "kind"
+    t.string   "title"
+    t.boolean  "isInstrumented"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.decimal  "latitude_delta"
+    t.decimal  "longitude_delta"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "group_id"
+  end
+
+  add_index "locations", ["group_id"], name: "index_locations_on_group_id"
+
+  create_table "spaces", force: :cascade do |t|
+    t.integer  "policy"
+    t.boolean  "metered"
+    t.boolean  "instrumented"
+    t.boolean  "creditcard"
+    t.boolean  "coin"
+    t.integer  "group_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "unique_id"
+  end
+
+  add_index "spaces", ["group_id"], name: "index_spaces_on_group_id"
 
 end

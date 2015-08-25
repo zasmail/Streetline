@@ -1,0 +1,16 @@
+<% @group.spaces.each do |space| %>
+  <p>
+    <strong>ID:</strong>
+    <%= space.id %>
+  </p>
+ 
+  <p>
+    <strong>Policy:</strong>
+    <%= space.policy %>
+  </p>
+  <p>
+   <%= link_to 'Destroy Space', [space.group, space],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>

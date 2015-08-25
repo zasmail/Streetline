@@ -1,0 +1,27 @@
+<p>
+  <strong>Title:</strong>
+  <%= @group.title %>
+</p>
+ 
+<p>
+  <strong>Kind:</strong>
+  <%= @group.kind %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @group.location %>
+</p>
+
+<h2>Spaces</h2>
+<%= render @group.spaces %>
+
+<h2>Spaces</h2>
+<%= render @group.spaces %>
+
+<h2>Add a space:</h2>
+<%= render 'spaces/form' %>
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+
+<%= link_to 'Back', groups_path %>

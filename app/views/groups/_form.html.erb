@@ -1,0 +1,50 @@
+<%= form_for @group do |f| %>
+ 
+  <% if @group.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@group.errors.count, "error") %> prohibited
+        this group from being saved:
+      </h2>
+      <ul>
+        <% @group.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :kind %><br>
+    <%= f.text_area :kind %>
+  </p>
+
+  <%= fields_for :location do |location_fields| %>
+    <p>
+      <%= location_fields.label :latitude %><br>
+      <%= location_fields.text_field :latitude %>
+    </p>
+     <p>
+      <%= location_fields.label :latitude_delta %><br>
+      <%= location_fields.text_field :latitude_delta %>
+    </p>
+    <p>
+      <%= location_fields.label :longitude %><br>
+      <%= location_fields.text_field :longitude %>
+    </p>
+    <p>
+      <%= location_fields.label :longitude_delta %><br>
+      <%= location_fields.text_field :longitude_delta %>
+    </p>
+  <% end %>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
