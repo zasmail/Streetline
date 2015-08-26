@@ -25,6 +25,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #pagination
 gem 'kaminari'
 
+#google Maps
+gem 'gmaps4rails'
+
+#underscorejs
+gem 'underscore-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

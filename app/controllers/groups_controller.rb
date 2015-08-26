@@ -2,7 +2,14 @@ class GroupsController < ApplicationController
   http_basic_authenticate_with name: "admin", password: "password", except: [:index, :show]
   
   def index
-    @groups = Group.order("id").page(params[:page])
+    @groups = Group.where(kind: 'block').order("id").page(params[:page])
+    # @locations = @groups.all.each do |group| group["location"] end
+    @hash = Gmaps4rails.build_markers(@groups.map(&:location)) do |location, marker|
+      marker.lat location[0]['latitude']
+      marker.lng location[0]['longitude']
+      group = Group.find(location[0]['group_id'])
+      marker.infowindow(group['title'])
+    end
   end  
 
   def show
