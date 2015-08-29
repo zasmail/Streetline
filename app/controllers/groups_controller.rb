@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
       marker.lat location[0]['latitude']
       marker.lng location[0]['longitude']
       group = Group.find(location[0]['group_id'])
-      marker.infowindow(group['title'])
+      marker.infowindow("#{group['title']}: #{group.avaliable_spaces}/#{group.spaces.size} spaces are avaliable spaces")
     end
   end  
 
